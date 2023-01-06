@@ -58,7 +58,7 @@ def target(area):
     if len(area) > 2:
         whereTo = driver.find_element(By.XPATH, "//input[@placeholder='Where to?']")
         time.sleep(2)
-        whereTo.send_keys(area[0])  # why won't it let me input more places
+        whereTo.send_keys(area)
         time.sleep(2)
 
         whereToClick = driver.find_element(By.XPATH, "//li[@aria-label='" + area + "']")
@@ -103,9 +103,6 @@ data = data + (target('Europe'))
 data = data + (target('Asia'))
 data = data + (target(""))
 data = [*set(data)]
-# for numberDestinations in range(len(data)):
-#     print(data[numberDestinations])
-# time.sleep(1)
 
 
 tweeted = 'Couple of current flight deals on Google Flights! \n'
