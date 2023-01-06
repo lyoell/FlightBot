@@ -107,8 +107,12 @@ data = [*set(data)]
 
 tweeted = 'Couple of current flight deals on Google Flights! \n'
 for c in range(4):
-    tweeted = tweeted + data[random.randint(0, len(data))]+'\n'
-
+    num = random.randint(0,len(data))
+    if len(data[num])>1:
+        tweeted = tweeted + data[num]+'\n'
+        data[num] = ''
+    else:
+        c = c+1
 
 if __name__ == '__main__':
     api = api()
